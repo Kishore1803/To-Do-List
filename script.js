@@ -1,15 +1,15 @@
-alert("Hi User! Welcome to the To-Do List App!");
+alert("Hi User 👋 ! Welcome to the To-Do List App!");
 // add a todo list
 function addTodo() {
     let todoInput = document.getElementById('todoInput'); // get input box
     let todoText = todoInput.value; // get input value
      if (todoText === "") {  // prevent adding empty tasks
-        alert("Please enter a task!");
+        alert("Please enter a task!"); // alert user if input is empty
         return;
     }
-    let li = document.createElement("li");
-    li.textContent = todoText;
-    document.getElementById('todoList').appendChild(li);
+    let li = document.createElement("li"); // create list item
+    li.textContent = todoText; // set list item text
+    document.getElementById('todoList').appendChild(li); // add list item to todo list
     todoInput.value = "";  // clear input box
 }
 
