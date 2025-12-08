@@ -1,4 +1,5 @@
 alert("Hi User 👋 ! Welcome to the To-Do List App!");
+
 // add a todo list
 function addTodo() {
     let todoInput = document.getElementById('todoInput'); // get input box
