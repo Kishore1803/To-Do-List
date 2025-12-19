@@ -1,89 +1,158 @@
-*{
+/* Google Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Background */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card */
+.todo-container {
+  background: linear-gradient(180deg, #ffffff, #f3f4ff);
+  width: 100%;
+  max-width: 420px;
+  padding: 28px 24px;
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.6s ease;
+}
+
+/* Title */
+.todo-container h1 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 22px;
+}
+
+/* Input Section */
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-section input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.input-section input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+/* Buttons */
+.btn {
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.35);
+}
+
+/* Delete Button */
+.btn:last-child {
+  background: linear-gradient(135deg, #ff5c5c, #ff2e63);
+}
+
+.btn:last-child:hover {
+  box-shadow: 0 10px 20px rgba(255, 92, 92, 0.35);
+}
+
+/* Task List Title */
+.list {
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+/* List */
+#todoList {
+  list-style: none;
+  max-height: 240px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Task Item */
+#todoList li {
+  background: #ffffff;
+  margin-bottom: 10px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Scrollbar */
+#todoList::-webkit-scrollbar {
+  width: 5px;
+}
+#todoList::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .todo-container {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    padding: 22px 18px;
+  }
 
-body{
-    font-family: Poppins, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    background-color: bisque;
-    height: auto;
-}
-
-.todo{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    padding: 30px;
-    border: 2px solid #000;
-    border-radius: 10px;
-    height: auto;
-    background-color: white;
-    color: black;
-    box-shadow: 80px 100px 150px rgba(208, 14, 14, 0.4);
-}
-
-.todo-container{
-    text-align: center;
-}
-
-.input-section{
-    display: flex;
-}
-
-.input-section input{
-    width: 95%;
-    padding: 10px;
-    border: 2px solid #000;
-    border-radius: 5px;
-    outline: none;
-}
-
-.btn{
-    width: fit-content;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: blue;
-    color: white;
-    cursor: pointer;
-    margin: 0 15px;
-    border: none;
-}
-
-.btn:hover{
-    background-color: darkblue;
-}
-
-.list{
-    text-align: center;
-    margin: 5px 10px;
-    padding: 5px;
-    font-size: 24px;
-}
-
-li{
-    list-style-type: none;
-    text-align: left;
-    padding: 8px;
-    margin: 5px 0;
-    background-color: white;
-    color: black;
-    border-radius: 5px;
-    font-size: 16px;
-    border: 3px solid black;
-}
-
-@media screen and (max-width: 600px){
-    .todo, .input-section{
-        flex-direction: column;
-    }
-
-    .btn{
-        margin: 10px;
-    }
-
+  .btn {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
 }
